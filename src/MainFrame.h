@@ -5,6 +5,7 @@
 #include <wx/wx.h>
 #include <wx/notebook.h>
 #include <wx/filectrl.h>
+#include <wx/listctrl.h>
 #include <wx/dnd.h>
 #include <wx/spinctrl.h>  // 添加wxSpinCtrl头文件
 #include <wx/radiobox.h>  // 添加wxRadioBox头文件
