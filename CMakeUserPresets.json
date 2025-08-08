@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/gaojunxin/code/github/batch-file-renam/build/Debug/generators/CMakePresets.json"
+    ]
+}

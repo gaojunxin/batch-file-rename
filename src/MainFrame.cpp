@@ -146,7 +146,11 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_MENU, &MainFrame::OnSelectFile, this, 10001);
     Bind(wxEVT_MENU, &MainFrame::OnSelectFolder, this, 10002);
 
-    SetIcon(wxICON(IDI_APP_ICON));
+    #ifdef __WXMSW__
+        SetIcon(wxICON(IDI_APP_ICON));
+    #else
+        SetIcon(wxIcon(wxT("appicon.ico"), wxBITMAP_TYPE_PNG));
+    #endif
 }
 
 void MainFrame::CreateControls()
