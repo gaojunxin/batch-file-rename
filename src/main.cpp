@@ -6,7 +6,7 @@ class MyApp : public wxApp
 public:
     virtual bool OnInit()
     {
-        MainFrame* frame = new MainFrame("文件批量重命名");
+        MainFrame* frame = new MainFrame(wxT("文件批量重命名"));
         frame->Show(true);
         return true;
     }

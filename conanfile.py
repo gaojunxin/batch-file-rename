@@ -43,9 +43,12 @@ class batch_file_renameRecipe(ConanFile):
         if not os.path.exists("wxWidgets"):
             self.run("git clone https://github.com/wxWidgets/wxWidgets.git --depth=1")
             self.run("git submodule update --init --recursive --depth=1", cwd=work_path)
-        self.run("cmake . -DCMAKE_INSTALL_PREFIX=../libs/wxWidgets", cwd=work_path)
+        if self.settings.os == "Windows":
+            self.run("cmake . -G \"MinGW Makefiles\" -DCMAKE_INSTALL_PREFIX=../libs/wxWidgets", cwd=work_path)
+        else:
+            self.run("cmake . -DCMAKE_INSTALL_PREFIX=../libs/wxWidgets", cwd=work_path)
         self.run("cmake --build . --target install --parallel 10", cwd=work_path)
-        
-    
 
-    
+
+
+
