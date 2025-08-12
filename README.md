@@ -23,10 +23,10 @@
 
 ```bash
 # 下载依赖并安装
-conan install . --build=missing
-# 构建项目
-cmake -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
+conan source .
+conan install . --build
+
+conan build . --profile mingw
 ```
 
 ## 截图演示
