@@ -23,10 +23,13 @@
 
 ```bash
 # 下载依赖并安装
-conan source .
-conan install . --build
 
+conan install . --build
 conan build . --profile mingw
+
+# 或
+conan install . --output-folder=build --build=missing
+conan build . --build=missing --settings=build_type=Release
 ```
 
 ## 截图演示
